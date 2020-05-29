@@ -47,9 +47,7 @@ function couldBeIsomorphic(_x, _x2) {
 
 /*istanbul ignore next*/
 function _couldBeIsomorphic() {
-  _couldBeIsomorphic = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _couldBeIsomorphic = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(G1, G2)
   /*istanbul ignore next*/
@@ -172,9 +170,7 @@ function fastCouldBeIsomorphic(_x3, _x4) {
 
 /*istanbul ignore next*/
 function _fastCouldBeIsomorphic() {
-  _fastCouldBeIsomorphic = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _fastCouldBeIsomorphic = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(G1, G2)
   /*istanbul ignore next*/
@@ -260,9 +256,7 @@ function fasterCouldBeIsomorphic(_x5, _x6) {
 
 /*istanbul ignore next*/
 function _fasterCouldBeIsomorphic() {
-  _fasterCouldBeIsomorphic = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _fasterCouldBeIsomorphic = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(G1, G2)
   /*istanbul ignore next*/

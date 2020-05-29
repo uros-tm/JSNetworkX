@@ -22,11 +22,15 @@ var
 /*istanbul ignore next*/
 _internals = require("../../_internals");
 
-/*istanbul ignore next*/ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+/*istanbul ignore next*/ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -86,9 +90,7 @@ function singleSourceShortestPathLength(_x, _x2, _x3) {
 
 /*istanbul ignore next*/
 function _singleSourceShortestPathLength() {
-  _singleSourceShortestPathLength = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _singleSourceShortestPathLength = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(G, source, optCutoff)
   /*istanbul ignore next*/
@@ -233,9 +235,7 @@ function allPairsShortestPathLength(_x4, _x5) {
 
 /*istanbul ignore next*/
 function _allPairsShortestPathLength() {
-  _allPairsShortestPathLength = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _allPairsShortestPathLength = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(G, optCutoff)
   /*istanbul ignore next*/
@@ -329,9 +329,7 @@ function bidirectionalShortestPath(_x6, _x7, _x8) {
 
 /*istanbul ignore next*/
 function _bidirectionalShortestPath() {
-  _bidirectionalShortestPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _bidirectionalShortestPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(G, source, target)
   /*istanbul ignore next*/
@@ -645,9 +643,7 @@ function singleSourceShortestPath(_x9, _x10, _x11) {
 
 /*istanbul ignore next*/
 function _singleSourceShortestPath() {
-  _singleSourceShortestPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _singleSourceShortestPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee4(G, source, optCutoff)
   /*istanbul ignore next*/
@@ -854,9 +850,7 @@ function allPairsShortestPath(_x12, _x13) {
 
 /*istanbul ignore next*/
 function _allPairsShortestPath() {
-  _allPairsShortestPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _allPairsShortestPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee5(G, optCutoff)
   /*istanbul ignore next*/
@@ -942,9 +936,7 @@ function predecessor(_x14, _x15) {
 
 /*istanbul ignore next*/
 function _predecessor() {
-  _predecessor = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _predecessor = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee6(G, source)
   /*istanbul ignore next*/

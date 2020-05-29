@@ -120,9 +120,7 @@ var testObserver = {
   /*istanbul ignore next*/
   testAddNodesIterator() {
     /*istanbul ignore next*/
-    var _marked =
-    /*#__PURE__*/
-    regeneratorRuntime.mark(gen);
+    var _marked = /*#__PURE__*/regeneratorRuntime.mark(gen);
 
     var G = new
     /*istanbul ignore next*/
@@ -225,9 +223,7 @@ var testObserver = {
   /*istanbul ignore next*/
   testAddEdgesIterator() {
     /*istanbul ignore next*/
-    var _marked2 =
-    /*#__PURE__*/
-    regeneratorRuntime.mark(gen);
+    var _marked2 = /*#__PURE__*/regeneratorRuntime.mark(gen);
 
     var G = new
     /*istanbul ignore next*/

@@ -28,9 +28,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Set =
-/*#__PURE__*/
-function () {
+var Set = /*#__PURE__*/function () {
   /**
    * @param {Iterable} opt_data An object, array or iterator to populate the set
    * with.
@@ -162,9 +160,7 @@ function () {
 
   }, {
     key: "entries",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function entries() {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function entries() {
       var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, v;
 
       return regeneratorRuntime.wrap(function entries$(_context) {

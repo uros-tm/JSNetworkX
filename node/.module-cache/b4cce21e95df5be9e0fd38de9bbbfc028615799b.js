@@ -14,9 +14,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = zipIterator;
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(zipIterator);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(zipIterator);
 
 function zipIterator()
 /*istanbul ignore next*/

@@ -12,9 +12,7 @@ _range = _interopRequireDefault(require("./range"));
 
 /*istanbul ignore next*/ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(genPermutations);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(genPermutations);
 
 /**
  * Implements Python's itertools.permutations

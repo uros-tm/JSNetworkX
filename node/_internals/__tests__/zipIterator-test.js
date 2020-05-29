@@ -13,9 +13,7 @@ _zipIterator = _interopRequireDefault(require("../zipIterator"));
 
 /*istanbul ignore next*/ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(gen);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(gen);
 
 function gen(data)
 /*istanbul ignore next*/

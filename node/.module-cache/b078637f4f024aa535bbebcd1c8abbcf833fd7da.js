@@ -24,24 +24,24 @@ _internals = require("../_internals");
 
 /*istanbul ignore next*/ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(yieldEdges),
-    _marked2 =
-/*#__PURE__*/
-regeneratorRuntime.mark(yieldDegree);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(yieldEdges),
+    _marked2 = /*#__PURE__*/regeneratorRuntime.mark(yieldDegree);
 
-/*istanbul ignore next*/ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+/*istanbul ignore next*/ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -149,9 +149,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
  * G.addEdgesFrom([[1,2,{color: 'blue'}], [2,3,{weight: 8}]]);
  * ```
  */
-var MultiDiGraph =
-/*#__PURE__*/
-function (_DiGraph) {
+var MultiDiGraph = /*#__PURE__*/function (_DiGraph) {
   _inherits(MultiDiGraph, _DiGraph);
 
   /**
@@ -431,9 +429,7 @@ function (_DiGraph) {
 
   }, {
     key: "edgesIter",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function edgesIter(optNbunch) {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function edgesIter(optNbunch) {
       var _this = this;
 
       var optData,
@@ -539,9 +535,7 @@ function (_DiGraph) {
 
   }, {
     key: "inEdgesIter",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function inEdgesIter(optNbunch) {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function inEdgesIter(optNbunch) {
       var _this2 = this;
 
       var optData,
@@ -636,9 +630,7 @@ function (_DiGraph) {
 
   }, {
     key: "degreeIter",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function degreeIter(optNbunch, optWeight) {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function degreeIter(optNbunch, optWeight) {
       var _this3 = this;
 
       var tuple2Succ, tuple2Pred, nodesNbrs, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _step$value, _step$value$, n, succ, _step$value$2, _, pred, keydict, inDegree, _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, outDegree, _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, _iteratorNormalCompletion4, _didIteratorError4, _iteratorError4, _iterator4, _step4, _step4$value, _step4$value$, _step4$value$2;
@@ -953,9 +945,7 @@ function (_DiGraph) {
 
   }, {
     key: "inDegreeIter",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function inDegreeIter(optNbunch, optWeight) {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function inDegreeIter(optNbunch, optWeight) {
       return regeneratorRuntime.wrap(function inDegreeIter$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
@@ -997,9 +987,7 @@ function (_DiGraph) {
 
   }, {
     key: "outDegreeIter",
-    value:
-    /*#__PURE__*/
-    regeneratorRuntime.mark(function outDegreeIter(optNbunch, optWeight) {
+    value: /*#__PURE__*/regeneratorRuntime.mark(function outDegreeIter(optNbunch, optWeight) {
       return regeneratorRuntime.wrap(function outDegreeIter$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {

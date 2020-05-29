@@ -19,23 +19,27 @@ _internals = require("../_internals");
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _asyncIterator(iterable) { var method; if (typeof Symbol !== "undefined") { if (Symbol.asyncIterator) { method = iterable[Symbol.asyncIterator]; if (method != null) return method.call(iterable); } if (Symbol.iterator) { method = iterable[Symbol.iterator]; if (method != null) return method.call(iterable); } } throw new TypeError("Object is not async iterable"); }
 
-function _asyncGeneratorDelegate(inner, awaitWrap) { var iter = {}, waiting = false; function pump(key, value) { waiting = true; value = new Promise(function (resolve) { resolve(inner[key](value)); }); return { done: false, value: awaitWrap(value) }; } ; if (typeof Symbol === "function" && Symbol.iterator) { iter[Symbol.iterator] = function () { return this; }; } iter.next = function (value) { if (waiting) { waiting = false; return value; } return pump("next", value); }; if (typeof inner["throw"] === "function") { iter["throw"] = function (value) { if (waiting) { waiting = false; throw value; } return pump("throw", value); }; } if (typeof inner["return"] === "function") { iter["return"] = function (value) { return pump("return", value); }; } return iter; }
+function _asyncGeneratorDelegate(inner, awaitWrap) { var iter = {}, waiting = false; function pump(key, value) { waiting = true; value = new Promise(function (resolve) { resolve(inner[key](value)); }); return { done: false, value: awaitWrap(value) }; } ; if (typeof Symbol === "function" && Symbol.iterator) { iter[Symbol.iterator] = function () { return this; }; } iter.next = function (value) { if (waiting) { waiting = false; return value; } return pump("next", value); }; if (typeof inner["throw"] === "function") { iter["throw"] = function (value) { if (waiting) { waiting = false; throw value; } return pump("throw", value); }; } if (typeof inner["return"] === "function") { iter["return"] = function (value) { if (waiting) { waiting = false; return value; } return pump("return", value); }; } return iter; }
 
 function _awaitAsyncGenerator(value) { return new _AwaitValue(value); }
 
 function _wrapAsyncGenerator(fn) { return function () { return new _AsyncGenerator(fn.apply(this, arguments)); }; }
 
-function _AsyncGenerator(gen) { var front, back; function send(key, arg) { return new Promise(function (resolve, reject) { var request = { key: key, arg: arg, resolve: resolve, reject: reject, next: null }; if (back) { back = back.next = request; } else { front = back = request; resume(key, arg); } }); } function resume(key, arg) { try { var result = gen[key](arg); var value = result.value; var wrappedAwait = value instanceof _AwaitValue; Promise.resolve(wrappedAwait ? value.wrapped : value).then(function (arg) { if (wrappedAwait) { resume("next", arg); return; } settle(result.done ? "return" : "normal", arg); }, function (err) { resume("throw", err); }); } catch (err) { settle("throw", err); } } function settle(type, value) { switch (type) { case "return": front.resolve({ value: value, done: true }); break; case "throw": front.reject(value); break; default: front.resolve({ value: value, done: false }); break; } front = front.next; if (front) { resume(front.key, front.arg); } else { back = null; } } this._invoke = send; if (typeof gen["return"] !== "function") { this["return"] = undefined; } }
+function _AsyncGenerator(gen) { var front, back; function send(key, arg) { return new Promise(function (resolve, reject) { var request = { key: key, arg: arg, resolve: resolve, reject: reject, next: null }; if (back) { back = back.next = request; } else { front = back = request; resume(key, arg); } }); } function resume(key, arg) { try { var result = gen[key](arg); var value = result.value; var wrappedAwait = value instanceof _AwaitValue; Promise.resolve(wrappedAwait ? value.wrapped : value).then(function (arg) { if (wrappedAwait) { resume(key === "return" ? "return" : "next", arg); return; } settle(result.done ? "return" : "normal", arg); }, function (err) { resume("throw", err); }); } catch (err) { settle("throw", err); } } function settle(type, value) { switch (type) { case "return": front.resolve({ value: value, done: true }); break; case "throw": front.reject(value); break; default: front.resolve({ value: value, done: false }); break; } front = front.next; if (front) { resume(front.key, front.arg); } else { back = null; } } this._invoke = send; if (typeof gen["return"] !== "function") { this["return"] = undefined; } }
 
 if (typeof Symbol === "function" && Symbol.asyncIterator) { _AsyncGenerator.prototype[Symbol.asyncIterator] = function () { return this; }; }
 
@@ -114,9 +118,7 @@ function findCliques(_x) {
 
 /*istanbul ignore next*/
 function _findCliques() {
-  _findCliques = _wrapAsyncGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _findCliques = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(G)
   /*istanbul ignore next*/
@@ -332,9 +334,7 @@ function findCliquesRecursive(_x2) {
 
 /*istanbul ignore next*/
 function _findCliquesRecursive() {
-  _findCliquesRecursive = _wrapAsyncGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _findCliquesRecursive = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(G)
   /*istanbul ignore next*/
@@ -345,7 +345,7 @@ function _findCliquesRecursive() {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            expand = function _ref(subgraph, candidates) {
+            expand = function _expand(subgraph, candidates) {
               var u, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, q, adjQ, subgraphQ, candidatesQ;
 
               return regeneratorRuntime.wrap(function expand$(_context2) {
@@ -458,9 +458,7 @@ function _findCliquesRecursive() {
               }, _marked, null, [[4, 26, 30, 38], [31,, 33, 37]]);
             };
 
-            _marked =
-            /*#__PURE__*/
-            regeneratorRuntime.mark(expand);
+            _marked = /*#__PURE__*/regeneratorRuntime.mark(expand);
 
             if (!(G.size === 0)) {
               _context3.next = 5;
@@ -555,9 +553,7 @@ function graphCliqueNumber(_x3, _x4) {
 
 /*istanbul ignore next*/
 function _graphCliqueNumber() {
-  _graphCliqueNumber = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _graphCliqueNumber = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(G, optCliques)
   /*istanbul ignore next*/
@@ -620,9 +616,7 @@ function graphNumberOfCliques(_x5, _x6) {
 
 /*istanbul ignore next*/
 function _graphNumberOfCliques() {
-  _graphNumberOfCliques = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _graphNumberOfCliques = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee4(G, optCliques)
   /*istanbul ignore next*/
@@ -663,9 +657,7 @@ function numberOfCliques(_x7, _x8, _x9) {
 
 /*istanbul ignore next*/
 function _numberOfCliques() {
-  _numberOfCliques = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _numberOfCliques = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee5(G, optNodes, optCliques)
   /*istanbul ignore next*/

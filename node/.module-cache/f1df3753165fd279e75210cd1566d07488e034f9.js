@@ -18,9 +18,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = genRange;
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(genRange);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(genRange);
 
 function genRange(optStart, optEnd, optStep)
 /*istanbul ignore next*/

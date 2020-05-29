@@ -70,9 +70,7 @@ function isDirectedAcyclicGraph(_x) {
 
 /*istanbul ignore next*/
 function _isDirectedAcyclicGraph() {
-  _isDirectedAcyclicGraph = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _isDirectedAcyclicGraph = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(G)
   /*istanbul ignore next*/
@@ -142,9 +140,7 @@ function topologicalSort(_x2, _x3) {
 
 /*istanbul ignore next*/
 function _topologicalSort() {
-  _topologicalSort = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _topologicalSort = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(G, optNbunch)
   /*istanbul ignore next*/
@@ -281,9 +277,7 @@ function topologicalSortRecursive(_x4, _x5) {
 
 /*istanbul ignore next*/
 function _topologicalSortRecursive() {
-  _topologicalSortRecursive = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _topologicalSortRecursive = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(G, optNbunch)
   /*istanbul ignore next*/
@@ -294,7 +288,7 @@ function _topologicalSortRecursive() {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            _dfs = function _ref(G, seen, explored, v) {
+            _dfs = function _dfs2(G, seen, explored, v) {
               // eslint-disable-line no-shadow
               seen.add(v);
               G.get(v).forEach(function (_, w) {
@@ -372,9 +366,7 @@ function isAperiodic(_x6) {
 
 /*istanbul ignore next*/
 function _isAperiodic() {
-  _isAperiodic = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _isAperiodic = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee4(G)
   /*istanbul ignore next*/

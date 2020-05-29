@@ -24,9 +24,7 @@ _internals = require("../_internals");
 
 /*istanbul ignore next*/ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(treeEdges);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(treeEdges);
 
 /**
  * @param {number} n nodes

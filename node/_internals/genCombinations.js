@@ -12,9 +12,7 @@ _range = _interopRequireDefault(require("./range"));
 
 /*istanbul ignore next*/ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(genCombinations);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(genCombinations);
 
 function reversed(array) {
   return array.slice().reverse();

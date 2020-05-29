@@ -15,9 +15,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = mapIterator;
 
-var _marked =
-/*#__PURE__*/
-regeneratorRuntime.mark(mapIterator);
+var _marked = /*#__PURE__*/regeneratorRuntime.mark(mapIterator);
 
 function mapIterator(iterator, map, optThisObj)
 /*istanbul ignore next*/

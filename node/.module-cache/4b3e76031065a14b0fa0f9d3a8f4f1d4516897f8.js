@@ -82,9 +82,7 @@ function fastGnpRandomGraph(_x, _x2) {
 
 /*istanbul ignore next*/
 function _fastGnpRandomGraph() {
-  _fastGnpRandomGraph = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _fastGnpRandomGraph = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(n, p)
   /*istanbul ignore next*/
@@ -200,9 +198,7 @@ function gnpRandomGraph(_x3, _x4) {
 
 /*istanbul ignore next*/
 function _gnpRandomGraph() {
-  _gnpRandomGraph = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _gnpRandomGraph = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(n, p)
   /*istanbul ignore next*/
@@ -361,9 +357,7 @@ function binomialGraph(_x5, _x6, _x7) {
 
 /*istanbul ignore next*/
 function _binomialGraph() {
-  _binomialGraph = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _binomialGraph = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(n, p, optDirected)
   /*istanbul ignore next*/
@@ -406,9 +400,7 @@ function erdosRenyiGraph(_x8, _x9, _x10) {
 
 /*istanbul ignore next*/
 function _erdosRenyiGraph() {
-  _erdosRenyiGraph = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _erdosRenyiGraph = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee4(n, p, optDirected)
   /*istanbul ignore next*/

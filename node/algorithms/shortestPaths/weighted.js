@@ -24,11 +24,15 @@ _JSNetworkXNoPath = _interopRequireDefault(require("../../exceptions/JSNetworkXN
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
@@ -94,16 +98,14 @@ function dijkstraPath(_x, _x2) {
 
 /*istanbul ignore next*/
 function _dijkstraPath() {
-  _dijkstraPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _dijkstraPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee(G,
   /*istanbul ignore next*/
   _ref)
   /*istanbul ignore next*/
   {
-    var source, target, _ref$weight, weight, _ref8, _ref9, distances, paths, path;
+    var source, target, _ref$weight, weight, _yield$singleSourceDi, _yield$singleSourceDi2, distances, paths, path;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -118,10 +120,10 @@ function _dijkstraPath() {
             });
 
           case 3:
-            _ref8 = _context.sent;
-            _ref9 = _slicedToArray(_ref8, 2);
-            distances = _ref9[0];
-            paths = _ref9[1];
+            _yield$singleSourceDi = _context.sent;
+            _yield$singleSourceDi2 = _slicedToArray(_yield$singleSourceDi, 2);
+            distances = _yield$singleSourceDi2[0];
+            paths = _yield$singleSourceDi2[1];
             path = paths.get(target);
 
             if (path) {
@@ -161,9 +163,7 @@ function dijkstraPathLength(_x3, _x4) {
 
 /*istanbul ignore next*/
 function _dijkstraPathLength() {
-  _dijkstraPathLength = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _dijkstraPathLength = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee2(G,
   /*istanbul ignore next*/
@@ -305,16 +305,14 @@ function singleSourceDijkstraPath(_x5, _x6) {
 
 /*istanbul ignore next*/
 function _singleSourceDijkstraPath() {
-  _singleSourceDijkstraPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _singleSourceDijkstraPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee3(G,
   /*istanbul ignore next*/
   _ref3)
   /*istanbul ignore next*/
   {
-    var source, cutoff, _ref3$weight, weight, _ref10, _ref11, length, path;
+    var source, cutoff, _ref3$weight, weight, _yield$singleSourceDi3, _yield$singleSourceDi4, length, path;
 
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -329,10 +327,10 @@ function _singleSourceDijkstraPath() {
             });
 
           case 3:
-            _ref10 = _context3.sent;
-            _ref11 = _slicedToArray(_ref10, 2);
-            length = _ref11[0];
-            path = _ref11[1];
+            _yield$singleSourceDi3 = _context3.sent;
+            _yield$singleSourceDi4 = _slicedToArray(_yield$singleSourceDi3, 2);
+            length = _yield$singleSourceDi4[0];
+            path = _yield$singleSourceDi4[1];
             return _context3.abrupt("return", path);
 
           case 8:
@@ -393,9 +391,7 @@ function singleSourceDijkstraPathLength(_x7, _x8) {
 
 /*istanbul ignore next*/
 function _singleSourceDijkstraPathLength() {
-  _singleSourceDijkstraPathLength = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _singleSourceDijkstraPathLength = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee4(G,
   /*istanbul ignore next*/
@@ -455,11 +451,11 @@ function _singleSourceDijkstraPathLength() {
               /*istanbul ignore next*/
               mapIterator)(G.get(v), function (
               /*istanbul ignore next*/
-              _ref12) {
+              _ref8) {
                 /*istanbul ignore next*/
-                var _ref13 = _slicedToArray(_ref12, 2),
-                    w = _ref13[0],
-                    keydata = _ref13[1];
+                var _ref9 = _slicedToArray(_ref8, 2),
+                    w = _ref9[0],
+                    keydata = _ref9[1];
 
                 // eslint-disable-line no-loop-func
                 return [w,
@@ -619,9 +615,7 @@ function singleSourceDijkstra(_x9, _x10) {
 
 /*istanbul ignore next*/
 function _singleSourceDijkstra() {
-  _singleSourceDijkstra = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _singleSourceDijkstra = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee5(G,
   /*istanbul ignore next*/
@@ -724,11 +718,11 @@ function _singleSourceDijkstra() {
               /*istanbul ignore next*/
               mapIterator)(G.get(v), function (
               /*istanbul ignore next*/
-              _ref15) {
+              _ref11) {
                 /*istanbul ignore next*/
-                var _ref16 = _slicedToArray(_ref15, 2),
-                    w = _ref16[0],
-                    keydata = _ref16[1];
+                var _ref12 = _slicedToArray(_ref11, 2),
+                    w = _ref12[0],
+                    keydata = _ref12[1];
 
                 // eslint-disable-line no-loop-func
                 return [w,
@@ -884,9 +878,7 @@ function allPairsDijkstraPathLength(_x11) {
 
 /*istanbul ignore next*/
 function _allPairsDijkstraPathLength() {
-  _allPairsDijkstraPathLength = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _allPairsDijkstraPathLength = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee6(G)
   /*istanbul ignore next*/
@@ -1006,9 +998,7 @@ function allPairsDijkstraPath(_x12) {
 
 /*istanbul ignore next*/
 function _allPairsDijkstraPath() {
-  _allPairsDijkstraPath = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function
+  _allPairsDijkstraPath = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function
   /*istanbul ignore next*/
   _callee7(G)
   /*istanbul ignore next*/
